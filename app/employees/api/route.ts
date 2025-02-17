@@ -14,6 +14,7 @@ export async function GET() {
     salary: faker.finance.amount({ min: 5000, max: 99999, dec: 0 }),
     age: faker.number.int({ min: 22, max: 60 }),
     profileImage: faker.image.avatar(),
+    information:faker.lorem.paragraphs(),
     startDate: faker.date.past({ years: 10 }).toISOString()
   }));
 

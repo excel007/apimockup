@@ -7,6 +7,7 @@ export async function GET() {
     id: faker.string.uuid(),
     brand: faker.vehicle.manufacturer(),
     model: faker.vehicle.model(),
+    description:faker.lorem.paragraphs(),
     year: faker.date.past({ years: 30 }).getFullYear(),
     color: faker.vehicle.color(),
     price: faker.finance.amount({min:200000, max:5000000, dec:0}),

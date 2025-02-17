@@ -14,6 +14,7 @@ export async function GET() {
     habitat: faker.location.city(),
     diet: faker.lorem.word(),
     owner: faker.person.fullName(),
+    about:faker.lorem.paragraphs(),
     image: faker.image.urlLoremFlickr({ category: 'animals' })
   }));
 
