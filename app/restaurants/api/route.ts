@@ -4,7 +4,7 @@ import { faker } from '@faker-js/faker';
 
 export async function GET() {
   // สร้างข้อมูลสายพันธ์สุนัข 100 ชุด
-  const restaurants = Array.from({ length: 10 }, () => ({
+  const restaurants = Array.from({ length: 100 }, () => ({
     id: faker.string.uuid(),
     name: faker.company.name(),
     address: faker.location.streetAddress(),
