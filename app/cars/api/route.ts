@@ -3,18 +3,18 @@ import { NextResponse } from 'next/server';
 import { faker } from '@faker-js/faker';
 
 export async function GET() {
-  const cars = Array.from({ length: 100 }, () => ({
+  const airlines = Array.from({ length: 10 }, () => ({
     id: faker.string.uuid(),
-    brand: faker.vehicle.manufacturer(),
-    model: faker.vehicle.model(),
-    description:faker.lorem.paragraphs(),
-    year: faker.date.past({ years: 30 }).getFullYear(),
-    color: faker.vehicle.color(),
-    price: faker.finance.amount({min:200000, max:5000000, dec:0}),
-    fuelType: faker.vehicle.fuel(),
-    owner: faker.person.fullName(),
-    image: faker.image.url()
+    airline: faker.company.name(),
+    flightNumber: faker.string.alphanumeric(6).toUpperCase(),
+    departure: faker.location.city(),
+    destination: faker.location.city(),
+    departureTime: faker.date.future().toISOString(),
+    arrivalTime: faker.date.future({ years: 1 }).toISOString(),
+    aircraft: faker.vehicle.vehicle(),
+    ticketPrice: faker.finance.amount({ min: 100, max: 5000, dec: 0 }),
+
   }));
 
-  return NextResponse.json(cars);
+  return NextResponse.json(airlines);
 }
